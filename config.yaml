@@ -1,0 +1,72 @@
+# Configuración de Base de Conocimiento - Licitaciones Mineras
+
+# Base de datos
+base_datos:
+  archivo: 'database.json'
+  encoding: 'utf-8'
+  backup_automatico: true
+  intervalo_backup_horas: 24
+
+# Búsqueda y indexación
+busqueda:
+  indice_completo: true
+  similitud_minima: 0.7
+  tamaño_maximo_consulta: 256
+  timeout_segundos: 30
+  
+# Reportes
+reportes:
+  formato_default: 'pdf'
+  incluir_graficos: true
+  incluir_tablas_detalladas: true
+  incluir_resumen_ejecutivo: true
+  directorio_salida: 'reportes/'
+  
+# Cronogramas Gantt
+gantt:
+  formato: 'html'
+  temas: ['default', 'dark', 'light']
+  mostrar_dependencias: true
+  mostrar_hitos: true
+  mostrar_porcentaje_avance: true
+  directorio_salida: 'cronogramas/'
+  
+# Análisis
+analisis:
+  comparativa_automatica: true
+  calcular_varianzas: true
+  detectar_anomalias: true
+  
+# Logging
+logging:
+  nivel: 'INFO'
+  archivo_log: 'logs/app.log'
+  formato: '[%(asctime)s] %(levelname)s - %(message)s'
+  
+# Categorías y tags permitidos
+categorias:
+  tipos_documento:
+    - 'bases_tecnicas'
+    - 'terminos_referencia'
+    - 'presupuesto'
+    - 'propuesta'
+    - 'evaluacion'
+    - 'cronograma'
+    - 'contrato'
+    - 'acta'
+    - 'informe'
+    - 'otro'
+  
+  estados_licitacion:
+    - 'draft'
+    - 'publicada'
+    - 'en_evaluacion'
+    - 'adjudicada'
+    - 'cancelada'
+    - 'completada'
+  
+  tipos_licitacion:
+    - 'Abierta'
+    - 'Restringida'
+    - 'Directa'
+    - 'Por invitacion'

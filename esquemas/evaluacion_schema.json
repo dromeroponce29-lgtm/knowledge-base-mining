@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Esquema de Evaluación de Propuestas",
+  "type": "object",
+  "properties": {
+    "id_evaluacion": {
+      "type": "string"
+    },
+    "id_licitacion": {
+      "type": "string"
+    },
+    "fecha_evaluacion": {
+      "type": "string",
+      "format": "date"
+    },
+    "criterios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "peso": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "puntaje_maximo": {
+            "type": "number"
+          }
+        },
+        "required": ["nombre", "peso"]
+      }
+    },
+    "propuestas_evaluadas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id_propuesta": {
+            "type": "string"
+          },
+          "empresa": {
+            "type": "string"
+          },
+          "puntuacion_tecnica": {
+            "type": "number"
+          },
+          "puntuacion_economica": {
+            "type": "number"
+          },
+          "puntuacion_total": {
+            "type": "number"
+          },
+          "estado_evaluacion": {
+            "type": "string",
+            "enum": ["conforme", "no_conforme", "pendiente", "rechazada"]
+          },
+          "comentarios": {
+            "type": "string"
+          },
+          "evaluador": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "resultado_final": {
+      "type": "object",
+      "properties": {
+        "ganador": {
+          "type": "string"
+        },
+        "segundo_lugar": {
+          "type": "string"
+        },
+        "tercero_lugar": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": ["id_evaluacion", "id_licitacion", "fecha_evaluacion"]
+}

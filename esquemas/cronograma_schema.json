@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Esquema de Cronograma Gantt",
+  "type": "object",
+  "properties": {
+    "id_cronograma": {
+      "type": "string"
+    },
+    "id_licitacion": {
+      "type": "string"
+    },
+    "nombre_proyecto": {
+      "type": "string"
+    },
+    "fecha_inicio": {
+      "type": "string",
+      "format": "date"
+    },
+    "fecha_fin": {
+      "type": "string",
+      "format": "date"
+    },
+    "fases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id_fase": {
+            "type": "string"
+          },
+          "nombre_fase": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "fecha_inicio": {
+            "type": "string",
+            "format": "date"
+          },
+          "fecha_fin": {
+            "type": "string",
+            "format": "date"
+          },
+          "duracion_dias": {
+            "type": "integer"
+          },
+          "responsable": {
+            "type": "string"
+          },
+          "actividades": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id_actividad": {
+                  "type": "string"
+                },
+                "nombre_actividad": {
+                  "type": "string"
+                },
+                "fecha_inicio": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "fecha_fin": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "duracion_dias": {
+                  "type": "integer"
+                },
+                "hito": {
+                  "type": "boolean"
+                },
+                "dependencia_de": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "hitos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id_hito": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date"
+          },
+          "descripcion": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": ["id_cronograma", "id_licitacion", "nombre_proyecto"]
+}

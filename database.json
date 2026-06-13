@@ -1,0 +1,91 @@
+{
+  "licitaciones": [
+    {
+      "id_licitacion": "LIC-2024-001",
+      "nombre": "Servicios de Exploración - Mina El Dorado",
+      "mina": "El Dorado",
+      "tipo_licitacion": "Abierta",
+      "estado": "en_evaluacion",
+      "descripcion": "Licitación para contratación de servicios de exploración geológica y perforación en la mina El Dorado",
+      "fecha_publicacion": "2024-01-15",
+      "fecha_cierre": "2024-02-28",
+      "fecha_adjudicacion": null,
+      "presupuesto_asignado": 500000,
+      "moneda": "USD",
+      "criterios_evaluacion": [
+        "Experiencia técnica (30%)",
+        "Precio (40%)",
+        "Propuesta técnica (20%)",
+        "Capacidad financiera (10%)"
+      ],
+      "documentos": [
+        {
+          "id_documento": "DOC-001",
+          "nombre": "bases_tecnicas.pdf",
+          "tipo": "bases_tecnicas",
+          "fecha_carga": "2024-01-15T10:00:00Z",
+          "url": "licitaciones/licitacion_001/bases/bases_tecnicas.pdf",
+          "tamaño_bytes": 2500000,
+          "formato": "pdf"
+        }
+      ],
+      "propuestas_recibidas": 3,
+      "ganador": null,
+      "tags": ["exploracion", "mineria", "2024", "el-dorado"]
+    },
+    {
+      "id_licitacion": "LIC-2024-002",
+      "nombre": "Suministro de Equipos de Perforación",
+      "mina": "La Esperanza",
+      "tipo_licitacion": "Restringida",
+      "estado": "publicada",
+      "descripcion": "Adquisición de equipos de perforación de última generación para operaciones en La Esperanza",
+      "fecha_publicacion": "2024-02-01",
+      "fecha_cierre": "2024-03-15",
+      "fecha_adjudicacion": null,
+      "presupuesto_asignado": 750000,
+      "moneda": "USD",
+      "criterios_evaluacion": [
+        "Especificaciones técnicas (40%)",
+        "Garantía y servicio posventa (30%)",
+        "Precio (30%)"
+      ],
+      "documentos": [],
+      "propuestas_recibidas": 0,
+      "ganador": null,
+      "tags": ["equipamiento", "perforacion", "2024", "la-esperanza"]
+    },
+    {
+      "id_licitacion": "LIC-2024-003",
+      "nombre": "Servicios de Consultoría Ambiental",
+      "mina": "San José",
+      "tipo_licitacion": "Abierta",
+      "estado": "adjudicada",
+      "descripcion": "Consultoría para estudios ambientales y evaluación de impacto ambiental",
+      "fecha_publicacion": "2023-11-20",
+      "fecha_cierre": "2024-01-10",
+      "fecha_adjudicacion": "2024-01-25",
+      "presupuesto_asignado": 150000,
+      "moneda": "USD",
+      "criterios_evaluacion": [
+        "Experiencia en proyectos mineros (35%)",
+        "Metodología propuesta (35%)",
+        "Valor económico (30%)"
+      ],
+      "documentos": [],
+      "propuestas_recibidas": 5,
+      "ganador": "Consultoría Ambiental Plus",
+      "tags": ["ambiental", "consultoria", "2024", "san-jose"]
+    }
+  ],
+  "documentos": [],
+  "evaluaciones": [],
+  "cronogramas": [],
+  "estadisticas": {
+    "total_licitaciones": 3,
+    "licitaciones_activas": 2,
+    "licitaciones_adjudicadas": 1,
+    "presupuesto_total": 1400000,
+    "propuestas_totales_recibidas": 8
+  }
+}

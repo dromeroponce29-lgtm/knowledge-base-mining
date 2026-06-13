@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Esquema de Licitación Minera",
+  "type": "object",
+  "properties": {
+    "id_licitacion": {
+      "type": "string",
+      "description": "Identificador único de la licitación",
+      "pattern": "^LIC-\\d{4}-\\d{3}$"
+    },
+    "nombre": {
+      "type": "string",
+      "description": "Nombre descriptivo de la licitación",
+      "minLength": 10,
+      "maxLength": 255
+    },
+    "mina": {
+      "type": "string",
+      "description": "Nombre de la mina o proyecto"
+    },
+    "tipo_licitacion": {
+      "type": "string",
+      "enum": ["Abierta", "Restringida", "Directa", "Por invitacion"]
+    },
+    "estado": {
+      "type": "string",
+      "enum": ["draft", "publicada", "en_evaluacion", "adjudicada", "cancelada", "completada"]
+    },
+    "descripcion": {
+      "type": "string",
+      "description": "Descripción detallada del alcance"
+    },
+    "fecha_publicacion": {
+      "type": "string",
+      "format": "date"
+    },
+    "fecha_cierre": {
+      "type": "string",
+      "format": "date"
+    },
+    "fecha_adjudicacion": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "presupuesto_asignado": {
+      "type": "number",
+      "minimum": 0
+    },
+    "moneda": {
+      "type": "string",
+      "enum": ["USD", "EUR", "CLP", "ARS", "BRL"]
+    },
+    "criterios_evaluacion": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "documentos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/documento"
+      }
+    },
+    "propuestas_recibidas": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "ganador": {
+      "type": ["string", "null"]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id_licitacion",
+    "nombre",
+    "mina",
+    "tipo_licitacion",
+    "estado",
+    "fecha_publicacion"
+  ],
+  "definitions": {
+    "documento": {
+      "type": "object",
+      "properties": {
+        "id_documento": {
+          "type": "string"
+        },
+        "nombre": {
+          "type": "string"
+        },
+        "tipo": {
+          "type": "string",
+          "enum": [
+            "bases_tecnicas",
+            "terminos_referencia",
+            "presupuesto",
+            "propuesta",
+            "evaluacion",
+            "cronograma",
+            "contrato",
+            "acta",
+            "otro"
+          ]
+        },
+        "fecha_carga": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "tamaño_bytes": {
+          "type": "integer"
+        },
+        "formato": {
+          "type": "string",
+          "enum": ["pdf", "xlsx", "docx", "json", "csv", "txt"]
+        }
+      }
+    }
+  }
+}

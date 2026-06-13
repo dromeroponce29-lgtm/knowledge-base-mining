@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Esquema de Documento",
+  "type": "object",
+  "properties": {
+    "id_documento": {
+      "type": "string",
+      "description": "Identificador único del documento"
+    },
+    "id_licitacion": {
+      "type": "string",
+      "description": "Referencia a la licitación padre"
+    },
+    "nombre": {
+      "type": "string",
+      "description": "Nombre del archivo"
+    },
+    "titulo": {
+      "type": "string",
+      "description": "Título descriptivo del documento"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "bases_tecnicas",
+        "terminos_referencia",
+        "presupuesto",
+        "propuesta",
+        "evaluacion",
+        "cronograma",
+        "contrato",
+        "acta",
+        "informe",
+        "otro"
+      ]
+    },
+    "descripcion": {
+      "type": "string",
+      "description": "Descripción del contenido"
+    },
+    "formato": {
+      "type": "string",
+      "enum": ["pdf", "xlsx", "docx", "json", "csv", "txt", "html"],
+      "description": "Formato del archivo"
+    },
+    "ruta": {
+      "type": "string",
+      "description": "Ruta del archivo en el repositorio"
+    },
+    "tamaño_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "fecha_creacion": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "fecha_actualizacion": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "autor": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "palabras_clave": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resumen": {
+      "type": "string",
+      "description": "Resumen ejecutivo del contenido"
+    }
+  },
+  "required": ["id_documento", "nombre", "tipo", "ruta"]
+}
